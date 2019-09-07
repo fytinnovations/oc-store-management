@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: fytinnovations.storemanagement::lang.category.name
+
+# Model Form Field configuration
+form: $/fytinnovations/storemanagement/models/category/fields.yaml
+
+# Model Class name
+modelClass: Fytinnovations\StoreManagement\Models\Category
+
+# Default redirect location
+defaultRedirect: fytinnovations/storemanagement/categories
+
+# Create page
+create:
+    title: fytinnovations.storemanagement::lang.categories.create
+    redirect: fytinnovations/storemanagement/categories/update/:id
+    redirectClose: fytinnovations/storemanagement/categories
+
+# Update page
+update:
+    title: fytinnovations.storemanagement::lang.categories.edit
+    redirect: fytinnovations/storemanagement/categories
+    redirectClose: fytinnovations/storemanagement/categories
+
+# Preview page
+preview:
+    title: fytinnovations.storemanagement::lang.categories.preview

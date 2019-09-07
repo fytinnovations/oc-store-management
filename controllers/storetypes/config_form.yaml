@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: fytinnovations.storemanagement::lang.store_type.name
+
+# Model Form Field configuration
+form: $/fytinnovations/storemanagement/models/storetype/fields.yaml
+
+# Model Class name
+modelClass: Fytinnovations\StoreManagement\Models\StoreType
+
+# Default redirect location
+defaultRedirect: fytinnovations/storemanagement/storetypes
+
+# Create page
+create:
+    title: fytinnovations.storemanagement::lang.store_types.create
+    redirect: fytinnovations/storemanagement/storetypes/update/:id
+    redirectClose: fytinnovations/storemanagement/storetypes
+
+# Update page
+update:
+    title: fytinnovations.storemanagement::lang.store_types.edit
+    redirect: fytinnovations/storemanagement/storetypes
+    redirectClose: fytinnovations/storemanagement/storetypes
+
+# Preview page
+preview:
+    title: fytinnovations.storemanagement::lang.store_types.preview

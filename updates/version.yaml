@@ -1,0 +1,7 @@
+1.0.1: 
+  - First version of StoreManagement
+  - create_categories_table.php
+  - seed_categories_table.php
+  - create_store_types_table.php
+  - seed_store_types_table.php
+  - create_stores_table.php

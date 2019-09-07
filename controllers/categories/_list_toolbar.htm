@@ -1,0 +1,53 @@
+<div data-control="toolbar">
+        <a
+            href="<?= Backend::url('fytinnovations/storemanagement/categories/create') ?>"
+            class="btn btn-primary oc-icon-plus">
+            <?=e(trans('fytinnovations.storemanagement::lang.form.new'))?> <?=e(trans('fytinnovations.storemanagement::lang.category.name'))?>
+        </a>
+        <a href="<?= Backend::url('fytinnovations/storemanagement/categories/reorder') ?>" class="btn btn-default oc-icon-sitemap">
+            <?=e(trans('fytinnovations.storemanagement::lang.categories.reorder'))?>
+        </a>
+    
+        <button
+            class="btn-toolbar btn btn-danger oc-icon-trash-o"
+            disabled="disabled"
+            onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })"
+            data-request="onDelete"
+            data-request-confirm="<?=e(trans('fytinnovations.storemanagement::lang.categories.delete_selected'))?>"
+            data-trigger-action="enable"
+            data-trigger=".control-list input[type=checkbox]"
+            data-trigger-condition="checked"
+            data-request-success="$('.btn-toolbar').prop('disabled', 'disabled')"
+            data-stripe-load-indicator>
+            <?=e(trans('fytinnovations.storemanagement::lang.form.delete_selected'))?>
+        </button>
+    
+        <button 
+            class="btn-toolbar btn btn-success oc-icon-magic"
+            disabled="disabled"
+            onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked')})"
+            data-request="onPublish"
+            data-request-confirm="<?=e(trans('fytinnovations.storemanagement::lang.categories.publish_selected'))?>"
+            data-trigger-action="enable"
+            data-trigger=".control-list input[type=checkbox]"
+            data-trigger-condition="checked"
+            data-request-success="$('.btn-toolbar').prop('disabled', 'disabled')"
+            data-stripe-load-indicator>
+            <?=e(trans('fytinnovations.storemanagement::lang.form.publish'))?>
+        </button>
+    
+        <button 
+            class="btn-toolbar btn btn-warning oc-icon-power-off"
+            disabled="disabled"
+            onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })"
+            data-request="onUnPublish"
+            data-request-confirm="<?=e(trans('fytinnovations.storemanagement::lang.categories.unpublish_selected'))?>"
+            data-trigger-action="enable"
+            data-trigger=".control-list input[type=checkbox]"
+            data-trigger-condition="checked"
+            data-request-success="$('.btn-toolbar').prop('disabled', 'disabled')"
+            data-stripe-load-indicator>
+            <?=e(trans('fytinnovations.storemanagement::lang.form.unpublish'))?>
+        </button>
+    </div>
+    

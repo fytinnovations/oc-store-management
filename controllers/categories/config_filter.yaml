@@ -1,0 +1,10 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    is_published:
+        label: fytinnovations.storemanagement::lang.general.show_published
+        type: checkbox
+        default: 0
+        conditions: is_published = true

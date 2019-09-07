@@ -1,0 +1,33 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: fytinnovations.storemanagement::lang.form.name 
+        type: text
+        span: auto
+        placeholder: E.g Super Market
+    slug:
+        label: fytinnovations.storemanagement::lang.form.slug
+        type: text
+        span: auto
+        preset: name
+    description:
+        label: fytinnovations.storemanagement::lang.form.description
+        type: textarea
+        span: full
+        size: medium
+    is_published:
+        label: fytinnovations.storemanagement::lang.form.published
+        type: switch
+        default: true
+        comment: Allow this store type to be attached to stores. 
+    icon:
+        label: fytinnovations.storemanagement::lang.form.icon
+        type: fileupload
+        mode: image
+        imageHeight: 100
+        imageWidth: 100
+
+

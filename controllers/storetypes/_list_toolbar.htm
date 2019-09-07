@@ -1,0 +1,49 @@
+<div data-control="toolbar">
+    <a
+        href="<?= Backend::url('fytinnovations/storemanagement/storetypes/create') ?>"
+        class="btn btn-primary oc-icon-plus">
+        <?=e(trans('fytinnovations.storemanagement::lang.form.new'))?> <?=e(trans('fytinnovations.storemanagement::lang.store_type.name'))?>
+    </a>
+
+    <button
+        class="btn-toolbar btn btn-danger oc-icon-trash-o"
+        disabled="disabled"
+        onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })"
+        data-request="onDelete"
+        data-request-confirm="<?=e(trans('fytinnovations.storemanagement::lang.store_types.delete_selected'))?>"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$('.btn-toolbar').prop('disabled', 'disabled')"
+        data-stripe-load-indicator>
+        <?=e(trans('fytinnovations.storemanagement::lang.form.delete_selected'))?>
+    </button>
+
+    <button 
+        class="btn-toolbar btn btn-success oc-icon-magic"
+        disabled="disabled"
+        onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked')})"
+        data-request="onPublish"
+        data-request-confirm="<?=e(trans('fytinnovations.storemanagement::lang.store_types.publish_selected'))?>"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$('.btn-toolbar').prop('disabled', 'disabled')"
+        data-stripe-load-indicator>
+        <?=e(trans('fytinnovations.storemanagement::lang.form.publish'))?>
+    </button>
+
+    <button 
+        class="btn-toolbar btn btn-warning oc-icon-power-off"
+        disabled="disabled"
+        onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })"
+        data-request="onUnPublish"
+        data-request-confirm="<?=e(trans('fytinnovations.storemanagement::lang.store_types.unpublish_selected'))?>"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$('.btn-toolbar').prop('disabled', 'disabled')"
+        data-stripe-load-indicator>
+        <?=e(trans('fytinnovations.storemanagement::lang.form.unpublish'))?>
+    </button>
+</div>

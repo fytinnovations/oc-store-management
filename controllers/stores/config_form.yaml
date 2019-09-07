@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Store
+
+# Model Form Field configuration
+form: $/fytinnovations/storemanagement/models/store/fields.yaml
+
+# Model Class name
+modelClass: Fytinnovations\StoreManagement\Models\Store
+
+# Default redirect location
+defaultRedirect: fytinnovations/storemanagement/stores
+
+# Create page
+create:
+    title: Create Store
+    redirect: fytinnovations/storemanagement/stores/update/:id
+    redirectClose: fytinnovations/storemanagement/stores
+
+# Update page
+update:
+    title: Edit Store
+    redirect: fytinnovations/storemanagement/stores
+    redirectClose: fytinnovations/storemanagement/stores
+
+# Preview page
+preview:
+    title: Preview Store

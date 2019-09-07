@@ -1,0 +1,13 @@
+/* Icons for lists published and unpublished */
+td .icon-check-circle{
+    border-radius: 5px;
+    background-color: green;
+    color:white;
+    padding: 5px;
+}
+td .icon-times-circle{
+    border-radius: 5px;
+    background-color: red;
+    color:white;
+    padding: 5px;
+}
