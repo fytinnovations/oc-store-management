@@ -8,6 +8,12 @@ use System\Classes\PluginBase;
  */
 class Plugin extends PluginBase
 {
+
+    /**
+     * @var array Plugin dependencies
+     */
+    public $require = ['Rainlab.User','Rainlab.Location'];
+
     /**
      * Returns information about this plugin.
      *

@@ -1,8 +1,115 @@
 # ===================================
 #  Form Field Definitions
 # ===================================
-
 fields:
-    id:
-        label: ID
-        disabled: true
+    name:
+        label: fytinnovations.storemanagement::lang.form.name 
+        type: text
+        span: storm
+        cssClass: col-xs-4
+        placeholder: E.g Nike Store
+    slug:
+        label: fytinnovations.storemanagement::lang.form.slug
+        type: text
+        span: storm
+        cssClass: col-xs-4
+        preset: name
+    store_type:
+        label: fytinnovations.storemanagement::lang.store_type.name
+        type: relation
+        span: storm
+        cssClass: col-xs-4
+tabs:
+    fields:
+        description:
+            label: fytinnovations.storemanagement::lang.form.description
+            type: textarea
+            span: full
+            size: medium
+            tab: Basic
+        manager:
+            label: fytinnovations.storemanagement::lang.store.manager
+            span: storm
+            cssClass: col-xs-4
+            placeholder: fytinnovations.storemanagement::lang.store.manager_placeholder
+            type: relation
+            select: concat(first_name, ' ', last_name)
+            tab: Contact Info
+        email:
+            label: fytinnovations.storemanagement::lang.form.email
+            span: storm
+            dependsOn: manager
+            cssClass: col-xs-4
+            type: text
+            tab: Contact Info
+        phone:
+            label: fytinnovations.storemanagement::lang.form.phone
+            type: text
+            span: storm
+            cssClass: col-xs-4
+            tab: Contact Info
+        address:
+            label: fytinnovations.storemanagement::lang.address.name
+            type: addressfinder
+            tab: Address & Location
+            fieldMap:
+                latitude: latitude
+                longitude: longitude
+                city: city
+                zip: zip
+                country: country_code
+                state: state_code
+                vicinity: vicinity
+        city:
+            label: fytinnovations.storemanagement::lang.city.name
+            span: storm
+            tab: Address & Location
+            cssClass: col-xs-4
+        zip:
+            label: fytinnovations.storemanagement::lang.zip.name
+            span: storm
+            cssClass: col-xs-4
+            tab: Address & Location
+        country_code:
+            label: fytinnovations.storemanagement::lang.country_code.name
+            span: storm
+            cssClass: col-xs-4
+            tab: Address & Location
+        state_code:
+            label: fytinnovations.storemanagement::lang.state_code.name
+            span: storm
+            cssClass: col-xs-4
+            tab: Address & Location
+        latitude:
+            label: fytinnovations.storemanagement::lang.latitude.name
+            span: storm
+            cssClass: col-xs-4
+            tab: Address & Location
+        longitude:
+            label: fytinnovations.storemanagement::lang.longitude.name
+            span: storm
+            cssClass: col-xs-4
+            tab: Address & Location
+        vicinity:
+            label: fytinnovations.storemanagement::lang.vicinity.name
+            span: storm
+            cssClass: col-xs-4
+            tab: Address & Location
+        is_published:
+            label: fytinnovations.storemanagement::lang.form.published
+            type: switch
+            default: true
+            span: left
+            comment: fytinnovations.storemanagement::lang.store_type.is_published_comment
+            tab: Basic
+secondaryTabs:
+    fields:
+        featured_image:
+            label: Featured Image
+            type: fileupload
+            mode: image
+        images:
+            label: Other Images
+            type: fileupload
+            mode: image
+

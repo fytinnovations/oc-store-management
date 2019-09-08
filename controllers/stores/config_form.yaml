@@ -23,7 +23,7 @@ create:
 # Update page
 update:
     title: Edit Store
-    redirect: fytinnovations/storemanagement/stores
+    redirect: fytinnovations/storemanagement/stores/update/:id
     redirectClose: fytinnovations/storemanagement/stores
 
 # Preview page

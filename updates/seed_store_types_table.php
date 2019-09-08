@@ -8,6 +8,13 @@ class SeedStoreTypesTable extends Seeder
     public function run()
     {
         $store_type = StoreType::create([
+            'name'                  => 'Uncategorized',
+            'slug'                  => 'uncategorized',
+            'description'           => 'Default category for stores',
+            'is_published'          => true,
+        ]);
+
+        $store_type = StoreType::create([
             'name'                  => 'Department Stores',
             'slug'                  => 'department-stores',
             'description'           => 'These stores stock a large variety of goods separated into separate departments (home goods, toys, furniture). Often, you can find them as the cornerstones of malls or other large facilities that house a variety of retailers.',

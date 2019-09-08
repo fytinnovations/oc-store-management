@@ -1,16 +1,19 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('fytinnovations/storemanagement/stores') ?>">Stores</a></li>
-        <li><?= e($this->pageTitle) ?></li>
+        <li><a href="<?= Backend::url('fytinnovations/storemanagement/stores') ?>"><?= e(trans('fytinnovations.storemanagement::lang.stores.menu_label')) ?></a></li>
+        <li><?= e(trans($this->pageTitle)) ?></li>
     </ul>
 <?php Block::endPut() ?>
 
 <?php if (!$this->fatalError): ?>
 
-    <?= Form::open(['class' => 'layout']) ?>
+    <?php Block::put('form-contents') ?>
 
+        <div class="layout-row min-size">
+            <?= $this->formRenderOutsideFields() ?>
+        </div>
         <div class="layout-row">
-            <?= $this->formRender() ?>
+            <?= $this->formRenderPrimaryTabs() ?>
         </div>
 
         <div class="form-buttons">
@@ -18,39 +21,51 @@
                 <button
                     type="submit"
                     data-request="onSave"
-                    data-request-data="redirect:0"
                     data-hotkey="ctrl+s, cmd+s"
-                    data-load-indicator="Saving Store..."
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving_name',['name'=>$formRecordName])) ?>"
                     class="btn btn-primary">
-                    <u>S</u>ave
+                    <?= e(trans('backend::lang.form.save')) ?>
                 </button>
                 <button
                     type="button"
                     data-request="onSave"
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="Saving Store..."
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving_name',['name'=>$formRecordName])) ?>"
                     class="btn btn-default">
-                    Save and Close
+                    <?= e(trans('backend::lang.form.save_and_close')) ?>
                 </button>
                 <button
                     type="button"
                     class="oc-icon-trash-o btn-icon danger pull-right"
                     data-request="onDelete"
-                    data-load-indicator="Deleting Store..."
-                    data-request-confirm="Delete this store?">
+                    data-load-indicator="<?= e(trans('backend::lang.form.deleting_name',['name'=>$formRecordName]))?>"
+                    data-request-confirm="<?= e(trans('backend::lang.form.confirm_delete'))?>">
                 </button>
                 <span class="btn-text">
-                    or <a href="<?= Backend::url('fytinnovations/storemanagement/stores') ?>">Cancel</a>
+                    <?= e(trans('backend::lang.form.or')) ?> <a href="<?= Backend::url('fytinnovations/storemanagement/stores') ?>"><?= e(trans('backend::lang.form.cancel')) ?></a>
                 </span>
             </div>
         </div>
 
-    <?= Form::close() ?>
+    <?php Block::endPut() ?>
+
+    <?php Block::put('form-sidebar') ?>
+        <div class="hide-tabs"><?= $this->formRenderSecondaryTabs() ?></div>
+    <?php Block::endPut() ?>
+
+    <?php Block::put('body') ?>
+        <?= Form::open(['class'=>'layout stretch']) ?>
+            <?= $this->makeLayout('form-with-sidebar') ?>
+        <?= Form::close() ?>
+    <?php Block::endPut() ?>
 
 <?php else: ?>
-
-    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('fytinnovations/storemanagement/stores') ?>" class="btn btn-default">Return to stores list</a></p>
-
+    <div class="control-breadcrumb">
+        <?= Block::placeholder('breadcrumb') ?>
+    </div>
+    <div class="padded-container">
+        <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
+        <p><a href="<?= Backend::url('fytinnovations/storemanagement/stores') ?>" class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a></p>
+    </div>
 <?php endif ?>

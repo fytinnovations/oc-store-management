@@ -24,14 +24,50 @@ return [
         "slug"=>"Slug",
         "icon"=>"Icon",
         "featured_image"=>"Featured Images",
-        "more_images"=>"More Images"
+        "more_images"=>"More Images",
+        'email'=>"Email",
+        'phone'=>"Phone"
+    ],
+    'address'=>[
+        'name'=>"Address",
+    ],
+    'city'=>[
+        'name'=>"City",
+    ],
+    'zip'=>[
+        'name'=>"Zip",
+    ],
+    'country_code'=>[
+        'name'=>"Country Code",
+    ],
+    'state_code'=>[
+        'name'=>"State Code",
+    ],
+    'latitude'=>[
+        'name'=>"Latitude",
+    ],
+    'longitude'=>[
+        'name'=>"Longitude",
+    ],
+    'vicinity'=>[
+        'name'=>"Vicinity",
     ],
     'stores'=>[
         'label'=>'Allow the user to manage all stores',
-        'menu_label'=>'Stores'
+        'menu_label'=>'Stores',
+        'create'=>'Create Store Type',
+        'edit'=> 'Edit Store Type',
+        'preview'=> 'Preview Store Type',
+        'delete_selected'=>'Are you sure you want to delete the selected Store Types?',
+        'publish_selected'=>'Are you sure you want to publish the selected Store Types?',
+        'unpublish_selected'=>'Are you sure you want to unpublish the selected Store Types?',
+        'list_name'=>'Manage Store Types',
+        'return_to_list'=>"Return to store types list",
     ],
     'store'=>[
         'label'=>'Only manage store assigned to the user',
+        "manager"=>"Manager",
+        "manager_placeholder"=>"-- select a manager --"
     ],
     'store_types'=>[
         'name'=>'Store Types',
@@ -43,10 +79,11 @@ return [
         'unpublish_selected'=>'Are you sure you want to unpublish the selected Store Types?',
         'menu_label'=>'Store Types',
         'list_name'=>'Manage Store Types',
-        'return_to_list'=>"Return to store types list"
+        'return_to_list'=>"Return to store types list",
     ],
     'store_type'=>[
         'name'=>'Store Type',
+        'is_published_comment'=>"Allow this store type to be attached to stores."
     ],
     'categories'=>[
         'name'=>'Categories',
