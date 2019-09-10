@@ -31,7 +31,9 @@ class StoreType extends Model
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [];
+    public $hasMany = [
+        'stores'=>'Fytinnovations\StoreManagement\Models\Store'
+    ];
     public $belongsTo = [];
     public $belongsToMany = [];
     public $morphTo = [];

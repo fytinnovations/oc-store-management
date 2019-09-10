@@ -2,7 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
-
+use Event;
 /**
  * StoreManagement Plugin Information File
  */
@@ -36,7 +36,10 @@ class Plugin extends PluginBase
      */
     public function register()
     {
-
+        //Adding font awesome kit code to the head of the backend layout
+        Event::listen('backend.layout.extendHead', function($layout) {
+            return '<script src="https://kit.fontawesome.com/a5263c8218.js"></script>';
+        });
     }
 
     /**
@@ -93,7 +96,7 @@ class Plugin extends PluginBase
             'storemanagement' => [
                 'label'       => 'fytinnovations.storemanagement::lang.plugin.name',
                 'url'         => Backend::url('fytinnovations/storemanagement/dashboard'),
-                'icon'        => 'icon-shopping-basket',
+                'icon'        => 'fas fa-store',
                 'permissions' => ['fytinnovations.storemanagement.*'],
                 'order'       => 500,
                 'sideMenu' => [
@@ -105,7 +108,7 @@ class Plugin extends PluginBase
                     ],
                     'stores' => [
                         'label'       => 'fytinnovations.storemanagement::lang.stores.menu_label',
-                        'icon'        => 'icon-home',
+                        'icon'        => 'fas fa-store',
                         'url'         => Backend::url('fytinnovations/storemanagement/stores'),
                         'permissions' => ['fytinnovations.storemanagement.manage_stores'],
                     ],
@@ -123,7 +126,7 @@ class Plugin extends PluginBase
                     ],
                     'categories' => [
                         'label'       => 'fytinnovations.storemanagement::lang.categories.menu_label',
-                        'icon'        => 'icon-database',
+                        'icon'        => 'icon-sitemap',
                         'url'         => Backend::url('fytinnovations/storemanagement/categories'),
                         'permissions' => ['fytinnovations.storemanagement.manage_stores'],
                     ],

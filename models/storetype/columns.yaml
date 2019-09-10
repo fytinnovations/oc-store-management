@@ -12,6 +12,10 @@ columns:
         label : fytinnovations.storemanagement::lang.form.description
         searchable: true
         width: 50%
+    stores_count:
+        label: fytinnovations.storemanagement::lang.stores.no_of_stores
+        relation: stores
+        useRelationCount: true
     is_published:
         label : fytinnovations.storemanagement::lang.form.published
         type: published

@@ -11,7 +11,19 @@ columns:
     description:
         label : fytinnovations.storemanagement::lang.form.description
         searchable: true
-        width: 50%
+        width: 25%
+    address:
+        label: fytinnovations.storemanagement::lang.address.name
+        searchable: true
+        width: 25%
+    manager:
+        label: fytinnovations.storemanagement::lang.store.manager
+        relation: manager
+        select: concat(first_name,' ',last_name)
+    store_type:
+        label: fytinnovations.storemanagement::lang.store_type.name
+        relation: store_type
+        select: name
     is_published:
         label : fytinnovations.storemanagement::lang.form.published
         type: published

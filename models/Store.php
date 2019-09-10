@@ -10,7 +10,7 @@ class Store extends Model
     use \October\Rain\Database\Traits\Nullable;
 
     public $rules = [
-        'name'                  => 'required|between:4,16',
+        'name'                  => 'required',
         'slug'                  => 'required|unique:fytinnovations_storemanagement_stores',
         'store_type_id'         => 'required|exists:fytinnovations_storemanagement_store_types,id',
         'email'                 => 'nullable|email',

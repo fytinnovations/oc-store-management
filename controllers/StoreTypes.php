@@ -25,4 +25,10 @@ class StoreTypes extends Controller
         parent::__construct();
         BackendMenu::setContext('Fytinnovations.StoreManagement', 'storemanagement', 'store_types');
     }
+
+    public function listOverrideColumnValue($record, $column, $definition){
+        if($column){
+
+        }
+    }
 }

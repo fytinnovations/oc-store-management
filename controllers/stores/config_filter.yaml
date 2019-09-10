@@ -1,0 +1,22 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    store_type:
+        label: fytinnovations.storemanagement::lang.store_type.name
+        modelClass: Fytinnovations\StoreManagement\Models\StoreType
+        conditions: store_type_id in (:filtered)
+        nameFrom: name
+
+    is_published:
+        label: fytinnovations.storemanagement::lang.general.show_published
+        type: checkbox
+        default: 0
+        conditions: is_published = true
+
+    created_at:
+        label: backend::lang.user.created_at
+        type: daterange
+        conditions: created_at >= ':after' AND created_at <= ':before'
